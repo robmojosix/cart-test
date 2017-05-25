@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cloneDeep from 'lodash.clonedeep';
 
 const { array, object } = PropTypes;
 
@@ -19,7 +20,7 @@ class Checkout extends Component {
     const { cart, allProducts } = props;
 
     this.state = {
-      cart: {...cart},
+      cart: cloneDeep(cart),
       allProducts
     }
 
@@ -82,7 +83,7 @@ class Checkout extends Component {
   }
 
   increaseItemQuantity(Id) {
-    const cart = { ...this.state.cart };
+    const cart = this.state.cart;
     cart.items.map((item) => {
       if(item.id === Id) {
         item.quantity ++;
@@ -93,7 +94,7 @@ class Checkout extends Component {
   }
 
   addNewItemToBasket(Id) {
-    const cart = { ...this.state.cart };
+    const cart = this.state.cart;
     const newItem = this.buildCartItemById(Id);
     cart.items.push(newItem);
     this.setState({ cart });
@@ -109,7 +110,7 @@ class Checkout extends Component {
   }
 
   removeFromBasket(Id) {
-    const cart = { ...this.state.cart };
+    const cart = this.state.cart;
     cart.items = cart.items.filter((item) => {
       if(item.id === Id) {
         if(item.quantity > 1) {

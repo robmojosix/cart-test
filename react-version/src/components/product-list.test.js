@@ -10,6 +10,7 @@ const productListData = [
 
 describe('<ProductList />', () => {
   let component;
+    console.log('test');
 
   beforeEach(() => {
     component = shallow(<ProductList products={productListData} />);

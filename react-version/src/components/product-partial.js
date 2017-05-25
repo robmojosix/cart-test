@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 const { string, func, number } = PropTypes;
-
+  
 const ProductPartial = ({title, id, price, addToBasket}) => {
 
   return (
