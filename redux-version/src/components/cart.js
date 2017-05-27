@@ -13,7 +13,7 @@ const Cart = ({items, total, removeFromBasket}) => {
       <ul>
         {cartItems}
       </ul>
-      <h2>{total}</h2>
+      <h2 className="total">{total}</h2>
     </div>
   )
 }

@@ -8,7 +8,7 @@ const cartItems = [
   {id:3, title: 'Product 3', price: 12, quantity: 1}
 ]
 
-const cartTotal = "37";
+const cartTotal = 37;
 
 describe('Cart component', () => {
 
@@ -23,7 +23,7 @@ describe('Cart component', () => {
   });
 
   it('Renders correct cart total', () => {
-    expect(component.find('h2').text()).toEqual(cartTotal);
+    expect(component.find('h2').text()).toEqual(cartTotal.toString());
   });
 
 });

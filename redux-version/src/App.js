@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 import './App.css';
 import Checkout from './components/checkout';
-
-import data from './fixtures/fixtures';
-const { cart, allProducts } = data;
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <Checkout cart={cart} allProducts={allProducts}/>
+        <Provider store={store}>
+          <Checkout />
+        </Provider>
       </div>
     );
   }
